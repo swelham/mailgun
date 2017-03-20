@@ -147,7 +147,7 @@ defmodule Mailgun.Client do
     attachments =
       Enum.reduce(attachments, [], fn upload, acc ->
         data = parse_attachment(upload) |> :erlang.binary_to_list
-        [{:attachment, String.to_char_list(upload.filename), data} | acc]
+        [{:inline, String.to_char_list(upload.filename), data} | acc]
       end)
 
     body = format_multipart_formdata(boundary, attrs, attachments)
