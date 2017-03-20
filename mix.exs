@@ -4,8 +4,8 @@ defmodule Mailgun.Mixfile do
   def project do
     [app: :mailgun,
      version: "0.1.3",
-     elixir: "~> 1.0",
-     deps: deps,
+     elixir: "~> 1.4",
+     deps: deps(),
      package: [
        contributors: ["Chris McCord"],
        licenses: ["MIT"],
@@ -33,8 +33,8 @@ defmodule Mailgun.Mixfile do
   #
   # Type `mix help deps` for more examples and options
   defp deps do
-    [{:exvcr, "~> 0.4.0", only: [:test]},
-     {:poison, "~> 1.4 or ~> 2.0"}
+    [{:exvcr, "~> 0.8.7", only: [:test]},
+     {:poison, "~> 3.0"}
     ]
   end
 end
